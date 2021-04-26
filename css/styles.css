@@ -768,7 +768,16 @@ textarea {
 .link-policy-modal {
   color: var(--accent-color);
 }
-.checkbox-modal input[type="checkbox"] {
-  width: 16px;
-  height: 15px;
+/* .checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+} */
+.icon-checkbox {
+  border-radius: 2px;
+  border: 2px solid var(--main-text-color);
 }
+.checkbox:checked + .icon-checkbox-span {
+  background-color: var(--accent-color);
+}
+/* Оформляем чекбокс!!! */
