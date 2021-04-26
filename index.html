@@ -379,6 +379,20 @@
                     </li>
                 </ul>
             </div>
+            <div class="footer-section-1">
+                <h3 class="title-footer-section">Подпишитесь на рассылку</h3>
+                <div class="signup-div">    
+                    <form class="js-speaker-form signup-form" name="signup_form" autocomplete="on" novalidate>
+                        <input id="email-signup" class="email-signup" type="email" name="email" placeholder="E-mail" />  
+                        <button class="btn-signup" type="submit">
+                            Подписаться
+                            <svg class="sigup-icon">
+                                <use href="./images/sprite.svg#icon-telegram"></use>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
@@ -388,8 +402,56 @@
                     <use href="./images/sprite.svg#icon-close"></use>
                 </svg>
             </button>
+            <h2 class="title-modal">Оставьте свои данные, мы вам перезвоним</h2>
+            <form class="js-speaker-form modal-form" name="modal_form" autocomplete="on" novalidate>
+                <ul class="list">
+                    <li class="form-field">
+                        <label class="label-modal" for="name-modal">Имя</label>
+                        <input class="input-modal" type="text" name="name-modal" id="name-modal" />
+                        <svg class="icon-modal" height="12px" width="12px">
+                            <use href="./images/sprite.svg#icon-name"></use>
+                        </svg>
+                    </li>
+                    <li class="form-field">
+                        <label class="label-modal" for="tel-modal">Телефон</label>
+                        <input class="input-modal" type="tel" name="tel-modal" id="tel-modal" />
+                        <svg class="icon-modal" height="13px" width="13px">
+                            <use href="./images/sprite.svg#icon-phone"></use>
+                        </svg>
+                    </li>
+                    <li class="form-field">
+                        <label class="label-modal" for="email-modal">Почта</label>
+                        <input class="input-modal email-modal" type="email" name="email-modal" id="email-modal" />
+                        <svg class="icon-modal" height="12px" width="15px">
+                            <use href="./images/sprite.svg#icon-mail"></use>
+                        </svg>
+                    </li>
+                    <li class="form-field">
+                        <label class="label-modal" for="comment-modal">Комментарий</label>
+                        <textarea class="input-modal textarea-modal" name="comment-modal" id="comment-modal" rows="6" placeholder="Введите текст"></textarea>
+                    </li>
+                </ul>
+                <div class="checkbox-modal">
+                    <input type="checkbox" name="policy-modal-checkbox" id="policy-modal-checkbox" />
+                    <label for="policy-modal" class="policy-modal">
+                        Соглашаюсь с рассылкой и принимаю
+                        <a href="" class="link-policy-modal">Условия договора</a>
+                    </label>
+                </div>
+                <button class="btn-modal" type="submit">Подписаться</button>
+            </form>
         </div>
     </div>
     <script src="./js/script.js"></script>
+    <script>
+        (() => {
+                document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+                    e.preventDefault();
+                    new FormData(e.currentTarget).forEach((value, name) =>
+                        console.log(`${name}: ${value}`),
+                    );
+                });
+            })();
+    </script>
 </body>
 </html>
