@@ -655,6 +655,7 @@ address {
   background-color: #ffffff;
   border-radius: 4px;
   z-index: 5;
+  transition: var(--animation) var(--timing-function);
 }
 .btn-close {
   display: flex;
@@ -697,6 +698,7 @@ address {
   position: relative;
   cursor: pointer;
   letter-spacing: 0.01em;
+  transition: var(--animation) var(--timing-function);
 }
 .input-modal:focus,
 .input-modal:hover {
@@ -726,6 +728,7 @@ textarea {
   resize: none;
 }
 .checkbox-modal {
+  position: relative;
   text-align: center;
   margin-bottom: 30px;
   margin-top: 20px;
@@ -761,23 +764,37 @@ textarea {
   margin-top: 43px;
   margin-left: 14px;
   transform: translateY(-50%);
+  transition: var(--animation) var(--timing-function);
 }
-.policy-modal {
+.policy-modal-text {
   color: var(--second-text-color);
+}
+.policy-modal-label {
+  display: inline-block;
 }
 .link-policy-modal {
   color: var(--accent-color);
 }
-/* .checkbox {
+.policy-modal-checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-} */
-.icon-checkbox {
+}
+.icon-checkbox-span {
+  display: inline-block;
+  background-image: url(../images/check.svg);
+  background-size: contain;
+  height: 15px;
+  width: 16px;
   border-radius: 2px;
   border: 2px solid var(--main-text-color);
+  transition: var(--animation) var(--timing-function);
 }
-.checkbox:checked + .icon-checkbox-span {
+.policy-modal-checkbox:checked + .icon-checkbox-span {
   background-color: var(--accent-color);
+  border: 0;
+  align-self: flex-end;
 }
+/* background-image: url(../images/check.svg); */
+
 /* Оформляем чекбокс!!! */
